@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レストラン推薦アプリ</title>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>🍽️ レストラン推薦マップ</h1>
+        <div class="header-subtitle">Gemini 2.0 Flash版</div>
+    </div>
+    
+    <div class="controls">
+        <div class="control-group">
+            <label for="location-input">場所を検索</label>
+            <input type="text" id="location-input" placeholder="例: 東京駅, 渋谷区など">
+        </div>
+        
+        <div class="control-group">
+            <label for="radius-select">検索範囲</label>
+            <select id="radius-select">
+                <option value="500">500m</option>
+                <option value="1000" selected>1km</option>
+                <option value="2000">2km</option>
+                <option value="5000">5km</option>
+            </select>
+        </div>
+        
+        <button class="btn" id="search-btn">🔍 場所検索</button>
+        <button class="btn" id="current-location-btn">📍 現在地</button>
+        <button class="btn btn-restaurant" id="restaurant-search-btn">🍽️ レストラン検索</button>
+        <button class="btn btn-secondary" id="debug-toggle-btn">🐛 デバッグ</button>
+    </div>
+    
+    <div class="map-container">
+        <div class="status" id="status">マップを読み込み中...</div>
+        
+        <div id="map"></div>
+        
+        <div class="debug-panel" id="debug-panel">
+            <h3>デバッグ情報</h3>
+            <p><strong>Google Maps API:</strong> <span id="debug-api-status">-</span></p>
+            <p><strong>Gemini API:</strong> <span id="debug-gemini-status">-</span></p>
+            <p><strong>座標:</strong> <span id="debug-coords">-</span></p>
+            <p><strong>ズームレベル:</strong> <span id="debug-zoom">-</span></p>
+            <p><strong>最後の検索:</strong> <span id="debug-last-search">-</span></p>
+            <p><strong>環境:</strong> <span id="debug-env">-</span></p>
+            <p><strong>レストラン:</strong> <span id="debug-restaurants">-</span></p>
+            <p><strong>API使用量:</strong> <span id="debug-api-usage">-</span></p>
+        </div>
+        
+        <!-- レストラン情報パネル（将来実装予定） -->
+        <div class="restaurant-panel" id="restaurant-panel" style="display: none;">
+            <h3>🍽️ 周辺レストラン</h3>
+            <div class="restaurant-list" id="restaurant-list">
+                <!-- レストラン一覧がここに表示される -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Viteがバンドルするメインスクリプト -->
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
