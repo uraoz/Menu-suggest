@@ -1,6 +1,6 @@
 # 🍽️ レストラン推薦アプリ
 
-Google Maps API と Gemini API を使った、レビュー分析に基づくレストラン推薦システム(予定)
+Google Maps API と Gemini API を使った、レビュー分析に基づくレストラン推薦システム
 
 ## 🚀 セットアップ
 
@@ -15,3 +15,6 @@ Google Maps API と Gemini API を使った、レビュー分析に基づくレ�
    ```bash
    git clone https://github.com/uraoz/restaurant-recommender.git
    cd restaurant-recommender
+
+### 動作例
+![image](https://github.com/user-attachments/assets/e849beee-9cd6-4f88-a147-485f28348a0d)
